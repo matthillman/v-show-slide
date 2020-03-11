@@ -180,7 +180,6 @@ const VShowSlide: VShowSlideInterface = {
     }
 
     const { easing, durationInSeconds } = this.getTargetByEl(el)
-    el.style.overflow = 'hidden'
     el.style.transition = `height ${easing} ${durationInSeconds}`
   },
 
@@ -227,6 +226,7 @@ const VShowSlide: VShowSlideInterface = {
     )
 
     el.style.height = `${scrollHeight + borderBottom + borderTop}px`
+    el.style.overflow = '';
 
     // Reset element height to auto after animating
     const newTimeout = setTimeout(() => {
@@ -257,6 +257,7 @@ const VShowSlide: VShowSlideInterface = {
 
     const scrollHeight = el.scrollHeight
     el.style.height = `${scrollHeight}px`
+    el.style.overflow = 'hidden';
     // https://gist.github.com/paulirish/5d52fb081b3570c81e3a
     const forceRedraw = el.offsetLeft
 
